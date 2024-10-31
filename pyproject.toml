@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "background"
+version = "0.1.0"
+description = ""
+authors = ["tzwm <git@tzwm.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dramatiq = {extras = ["redis", "watch"], version = "^1.17.0"}
+poethepoet = "^0.29.0"
+httpx = {extras = ["socks"], version = "^0.27.2"}
+python-dotenv = "^1.0.1"
+fastapi = {extras = ["standard"], version = "^0.115.0"}
+peewee = "^3.17.6"
+sqlite-web = "^0.6.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

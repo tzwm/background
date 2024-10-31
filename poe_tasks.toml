@@ -1,0 +1,11 @@
+[tool.poe.tasks]
+dramatiq_dev = "dramatiq --threads 4 --watch background background.main"
+dramatiq_prod = "dramatiq --watch background background.main"
+web_dev = "fastapi dev background/api.py"
+web_prod = "fastapi run background/api.py"
+deploy = "kamal deploy"
+sqlite_web = "sqlite_web -x -P -H 0.0.0.0 data/background.db"
+
+migrate.script = "scripts.db_migrate:create"
+test.script = "tests.demo:run"
+dramatiq_clear.script = "scripts.dramatiq:clear_all"
